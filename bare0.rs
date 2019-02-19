@@ -48,18 +48,19 @@ fn main() -> ! {
 // 1. Run the program in the debugger, let the program run for a while and
 //    then press pause. Look in the (Local -vscode) Variables view what do you find.
 //
-//    ** your answer here **
+//    We find the values of x
 //
 //    In the Expressions (WATCH -vscode) view add X and Y
 //    what do you find
 //
-//    ** your answer here **
+//    We find the values of x, X and Y. Sometimes they are the same
 //
 //    Step through one complete iteration of the loop
 //    and see how the (Local) Variables are updated
 //    can you foresee what will eventually happen?
 //
-// 	  ** place your answer here **
+// 	  The program starts by incrementing x, then X and finally Y.
+//    Because of that, these three variables are not always equals
 //
 //    Commit your answers (bare0_1)
 //
