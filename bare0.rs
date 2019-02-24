@@ -35,7 +35,7 @@ fn main() -> ! {
         unsafe {
             X = X.wrapping_add(1);
             Y = X;
-            assert!(x == X && X == Y);
+            assert!(x == X && X == Y + 1);
         }
     }
 }
@@ -88,7 +88,7 @@ fn main() -> ! {
 //
 // 4. Change the asserion to `assert!(x == X && X == Y + 1)`, what happens?
 //
-//    ** place your answer here **
+//    Because the condition in assert! is wrong, we get a panic.
 //
 //    Commit your answers (bare0_4)
 //
