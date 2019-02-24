@@ -31,9 +31,9 @@ fn main() -> ! {
     let mut x = unsafe { X };
 
     loop {
-        x += 1; // <- place breakpoint here (3)
+        x = x.wrapping_add(1); // <- place breakpoint here (3)
         unsafe {
-            X += 1;
+            X = X.wrapping_add(1);
             Y = X;
             assert!(x == X && X == Y);
         }
@@ -48,19 +48,20 @@ fn main() -> ! {
 // 1. Run the program in the debugger, let the program run for a while and
 //    then press pause. Look in the (Local -vscode) Variables view what do you find.
 //
-//    We find the values of x
+//    We find the value of x
 //
 //    In the Expressions (WATCH -vscode) view add X and Y
 //    what do you find
 //
-//    We find the values of x, X and Y. Sometimes they are the same
+//    We find the values of X and Y, which are often equals to x.
 //
 //    Step through one complete iteration of the loop
 //    and see how the (Local) Variables are updated
 //    can you foresee what will eventually happen?
 //
-// 	  The program starts by incrementing x, then X and finally Y.
-//    Because of that, these three variables are not always equals
+// 	  The program start by incrementing x, then X and finally Y.
+//    It means that these three values won't always be the same,
+//    depending on when we stop.
 //
 //    Commit your answers (bare0_1)
 //
@@ -75,10 +76,10 @@ fn main() -> ! {
 //
 //    Change (both) += opertions to use wrapping_add
 //    load and run the progam, what happens
-//    ** your answer here **
+//    Instead of overflow, x go back to 0.
 //
 //    Now continue exectution, what happens
-//    ** your answer here **
+//    Values goes into a loop from 0 up to 4294967295
 //
 //    Commit your answers (bare0_3)
 //
