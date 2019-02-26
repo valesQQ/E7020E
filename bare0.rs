@@ -19,24 +19,24 @@ extern crate panic_halt;
 use cortex_m_rt::entry;
 
 // a constant (cannot be changed at run-time)
-const X_INIT: u32 = 4294967295;
 
-// global mutabale variables (changed using unsafe code)
-static mut X: u32 = X_INIT;
-static mut Y: u32 = 0;
+// global mutabale variables (changed using unsafe co
+
+
+
 
 #[entry]
 fn main() -> ! {
+    let mut X: i32=10;
+    let mut Y: i32=0;
     // local mutabale variable (changed in safe code)
-    let mut x = unsafe { X };
+    let mut x: i32=X;
 
     loop {
         x = x.wrapping_add(1); // <- place breakpoint here (3)
-        unsafe {
             X = X.wrapping_add(1);
             Y = X;
-            assert!(x == X && X == Y + 1);
-        }
+        
     }
 }
 
