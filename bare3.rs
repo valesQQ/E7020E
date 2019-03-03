@@ -71,7 +71,7 @@ fn main() -> ! {
 //    's' is a String
 //
 //    What is the type of `bs`?
-//      'bs' is an array
+//      'bs' is a string slice
 //    
 //
 //    What is the type of `c`?
