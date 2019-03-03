@@ -77,19 +77,20 @@ fn main() -> ! {
 //    What is the output of:
 //    (gdb) disassemble
 //
-//    Dump of assembler code for function rust_begin_unwind:
-//   0x0800342e <+0>:	sub	sp, #16
-//   0x08003430 <+2>:	mov	r1, r0
-//   0x08003432 <+4>:	str	r0, [sp, #8]
-//   0x08003434 <+6>:	str	r1, [sp, #4]
-//   0x08003436 <+8>:	b.n	0x8003438 <rust_begin_unwind+10>
-//   0x08003438 <+10>:	movs	r0, #4
-//   0x0800343a <+12>:	strb.w	r0, [sp, #15]
-//   0x0800343e <+16>:	ldrb.w	r0, [sp, #15]
-//   0x08003442 <+20>:	bl	0x800344c <core::sync::atomic::compiler_fence>
-//   => 0x08003446 <+24>:	b.n	0x8003448 <rust_begin_unwind+26>
-//   0x08003448 <+26>:	b.n	0x8003438 <rust_begin_unwind+10>
-//   End of assembler dump.
+//{"token":40,"outOfBandRecord":[],"resultRecords":{"resultClass":"done","results":[]}}
+//Dump of assembler code for function rust_begin_unwind:
+//   0x08003420 <+0>:	sub	sp, #16
+//   0x08003422 <+2>:	mov	r1, r0
+//  0x08003424 <+4>:	str	r0, [sp, #8]
+//   0x08003426 <+6>:	str	r1, [sp, #4]
+//   0x08003428 <+8>:	b.n	0x800342a <rust_begin_unwind+10>
+//   0x0800342a <+10>:	movs	r0, #4
+//   0x0800342c <+12>:	strb.w	r0, [sp, #15]
+//   0x08003430 <+16>:	ldrb.w	r0, [sp, #15]
+//   0x08003434 <+20>:	bl	0x800343c <core::sync::atomic::compiler_fence>
+//=> 0x08003438 <+24>:	b.n	0x800343a <rust_begin_unwind+26>
+//   0x0800343a <+26>:	b.n	0x800342a <rust_begin_unwind+10>
+End of assembler dump.
 //
 //    Commit your answers (bare1_2)
 //
