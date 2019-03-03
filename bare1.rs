@@ -12,7 +12,9 @@
 
 extern crate panic_halt;
 
+use cortex_m::{iprintln, Peripherals};
 use cortex_m_rt::entry;
+use cortex_m_semihosting::hprintln;
 
 #[entry]
 #[inline(never)]
@@ -21,12 +23,19 @@ fn main() -> ! {
     // The compiler is smart enough to figure out that
     // `x` is not used in any menaningful way.
 
-    let mut _x = 0;
+    let mut _x:i32 = 0;
     loop {
+        let mut p = Peripherals::take().unwrap();
         _x += 1;
+        let stim = &mut p.ITM.stim[0];
+
+        iprintln!(stim, "{}", _x);
+        hprintln!("{}", _x).unwrap();
+
         cortex_m::asm::nop();
         cortex_m::asm::bkpt();
         _x -= 1;
+        
     }
 }
 
@@ -55,10 +64,10 @@ fn main() -> ! {
 //    loop, (press pause/suspend to verify this).
 //    what is the output in the ITM console
 //
-//    ** your answer here **
+//    The output is 1.
 //
 //    What is the output in the semihosting (openocd) console
-//    ** your answer here **
+//    The output is also 1.
 //
 //    Commit your answers (bare1_1)
 //
