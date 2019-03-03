@@ -71,7 +71,9 @@ fn main() -> ! {
 //
 //    What is the output in the ITM console?
 //
-//    ** your answer here **
+//    [2019-03-03T13:45:33.037Z]   bare2
+//    [2019-03-03T13:46:19.499Z]   Start 1556538358
+//    [2019-03-03T13:46:19.501Z]   End 2179538565
 //
 //    Rebuild and run in release mode
 //
