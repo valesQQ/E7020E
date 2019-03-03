@@ -18,25 +18,27 @@ use cortex_m_semihosting::{hprint, hprintln};
 #[entry]
 fn main() -> ! {
     hprintln!("bare3").unwrap();
-    let s = "ABCD";
-    let bs = s.as_bytes();
+    let s: &'static str = "ABCD";
+    let bs: &[u8] = s.as_bytes();
+    let _c: &[u8];
+    let _i: i32;
 
     hprintln!("s = {}", s).unwrap();
     hprintln!("bs = {:?}", bs).unwrap();
 
     hprintln!("iterate over slice").unwrap();
-    for c in bs {
-        hprint!("{},", c).unwrap();
+    for _c in bs {
+        hprint!("{},", _c).unwrap();
     }
 
     hprintln!("iterate iterate using (raw) indexing").unwrap();
-    for i in 0..s.len() {
-        hprintln!("{},", bs[i]).unwrap();
+    for _i in 0..s.len() {
+        hprintln!("{},", bs[_i]).unwrap();
     }
 
     hprintln!("").unwrap();
 
-    let a = [65u8; 4];
+    let a: [u8; 4] = [65u8; 4];
     //let mut a = [0u8; 4];
 
     hprintln!("").unwrap();
@@ -71,7 +73,7 @@ fn main() -> ! {
 //    's' is a String
 //
 //    What is the type of `bs`?
-//      'bs' is a string slice
+//      'bs' is an array
 //    
 //
 //    What is the type of `c`?
