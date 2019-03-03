@@ -231,7 +231,11 @@ End of assembler dump.
 //    Compare the generated assembly for the loop
 //    between the dev (unoptimized) and release (optimized) build.
 //
-//    ** your answer here **
+//        It takes less register
+//    {"token":44,"outOfBandRecord":[],"resultRecords":{"resultClass":"done","results":[]}}
+//    Dump of assembler code for function rust_begin_unwind:
+//    => 0x08000b1a <+0>:	b.n	0x8000b1a <rust_begin_unwind>
+//    End of assembler dump.
 //
 //    commit your answers (bare1_5)
 //
