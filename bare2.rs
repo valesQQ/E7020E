@@ -79,12 +79,17 @@ fn main() -> ! {
 //
 //    > cargo build --example bare2 --release
 //
-//    ** your answer here **
+//      [2019-03-03T13:51:36.839Z]   bare2
+//      [2019-03-03T13:51:37.144Z]   Start 1933161631
+//      [2019-03-03T13:51:37.145Z]   End 1937161639
+
 //
 //    Compute the ratio between debug/release optimized code
 //    (the speedup).
 //
-//    ** your answer here **
+//    for the debug, the time was 623 000 207
+//    for the release it was 4 000 008
+// The release is approximately 150x times faster
 //
 // commit your answers (bare2_1)
 //
