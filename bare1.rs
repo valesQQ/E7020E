@@ -33,7 +33,7 @@ fn main() -> ! {
         hprintln!("{}", _x).unwrap();
 
         cortex_m::asm::nop();
-        //cortex_m::asm::bkpt();
+        cortex_m::asm::bkpt();
         _x -= 1;
         
     }
@@ -123,7 +123,102 @@ End of assembler dump.
 //    What is the output of:
 //    (gdb) disassemble
 //
-//    ** your answer here **
+//    {"token":43,"outOfBandRecord":[],"resultRecords":{"resultClass":"done","results":[]}}
+//Dump of assembler code for function main:
+//   0x08000464 <+0>:	sub	sp, #136	; 0x88
+//   0x08000466 <+2>:	movs	r0, #0
+//  0x08000468 <+4>:	str	r0, [sp, #44]	; 0x2c
+//  0x0800046a <+6>:	b.n	0x800046c <main+8>
+//   0x0800046c <+8>:	bl	0x8000400 <cortex_m::peripheral::Peripherals::take>
+//   0x08000470 <+12>:	str	r0, [sp, #40]	; 0x28
+//   0x08000472 <+14>:	b.n	0x8000474 <main+16>
+//   0x08000474 <+16>:	ldr	r0, [sp, #40]	; 0x28
+//   0x08000476 <+18>:	and.w	r0, r0, #1
+//   0x0800047a <+22>:	bl	0x800057e <<core::option::Option<T>>::unwrap>
+//   0x080004aa <+70>:	str	r1, [sp, #92]	; 0x5c
+//   0x080004ac <+72>:	ldr	r1, [sp, #92]	; 0x5c
+//   0x080004ae <+74>:	movw	r2, #13325	; 0x340d
+//   0x080004b2 <+78>:	movt	r2, #2048	; 0x800
+//   0x080004b6 <+82>:	str	r0, [sp, #28]
+//   0x080004b8 <+84>:	mov	r0, r1
+//   0x080004ba <+86>:	mov	r1, r2
+//   0x080004bc <+88>:	bl	0x80007bc <core::fmt::ArgumentV1::new>
+//   0x080004c0 <+92>:	str	r0, [sp, #24]
+//   0x080004c2 <+94>:	str	r1, [sp, #20]
+//   0x080004c4 <+96>:	b.n	0x80004c6 <main+98>
+//   0x080004c6 <+98>:	ldr	r0, [sp, #24]
+//   0x080004c8 <+100>:	str	r0, [sp, #80]	; 0x50
+//   0x080004ca <+102>:	ldr	r1, [sp, #20]
+//   0x080004cc <+104>:	str	r1, [sp, #84]	; 0x54
+//   0x080004ce <+106>:	mov	r2, sp
+//   0x080004d0 <+108>:	movs	r3, #1
+//   0x080004d2 <+110>:	str	r3, [r2, #0]
+//   0x080004d4 <+112>:	movw	r1, #14424	; 0x3858
+//   0x080004d8 <+116>:	movt	r1, #2048	; 0x800
+//   0x080004dc <+120>:	add	r0, sp, #56	; 0x38
+//   0x080004de <+122>:	movs	r2, #2
+//   0x080004e0 <+124>:	add	r3, sp, #80	; 0x50
+//   0x080004e2 <+126>:	bl	0x800062e <core::fmt::Arguments::new_v1>
+//   0x080004e6 <+130>:	b.n	0x80004e8 <main+132>
+//   0x080004e8 <+132>:	add	r1, sp, #56	; 0x38
+//   0x080004ea <+134>:	ldr	r0, [sp, #28]
+//   0x080004ec <+136>:	bl	0x8001e36 <cortex_m::itm::write_fmt>
+//   0x080004f0 <+140>:	b.n	0x80004f2 <main+142>
+//   0x080004f2 <+142>:	add	r0, sp, #44	; 0x2c
+//   0x080004f4 <+144>:	str	r0, [sp, #128]	; 0x80
+//   0x080004f6 <+146>:	ldr	r0, [sp, #128]	; 0x80
+//   0x080004f8 <+148>:	str	r0, [sp, #132]	; 0x84
+//   0x080004fa <+150>:	ldr	r0, [sp, #132]	; 0x84
+//   0x080004fc <+152>:	movw	r1, #13325	; 0x340d
+//   0x08000500 <+156>:	movt	r1, #2048	; 0x800
+//   0x08000504 <+160>:	bl	0x80007bc <core::fmt::ArgumentV1::new>
+//   0x08000508 <+164>:	str	r0, [sp, #16]
+//   0x0800050a <+166>:	str	r1, [sp, #12]
+//   0x0800050c <+168>:	b.n	0x800050e <main+170>
+//   0x0800050e <+170>:	ldr	r0, [sp, #16]
+//   0x08000510 <+172>:	str	r0, [sp, #120]	; 0x78
+//   0x08000512 <+174>:	ldr	r1, [sp, #12]
+//   0x08000514 <+176>:	str	r1, [sp, #124]	; 0x7c
+//   0x08000516 <+178>:	mov	r2, sp
+//   0x08000518 <+180>:	movs	r3, #1
+//   0x0800051a <+182>:	str	r3, [r2, #0]
+//   0x0800051c <+184>:	movw	r1, #14424	; 0x3858
+//   0x08000520 <+188>:	movt	r1, #2048	; 0x800
+//   0x08000524 <+192>:	add	r0, sp, #96	; 0x60
+//   0x08000526 <+194>:	movs	r2, #2
+//   0x08000528 <+196>:	add	r3, sp, #120	; 0x78
+//   0x0800052a <+198>:	bl	0x800062e <core::fmt::Arguments::new_v1>
+//   0x0800052e <+202>:	b.n	0x8000530 <main+204>
+//   0x08000530 <+204>:	add	r0, sp, #96	; 0x60
+//   0x08000532 <+206>:	bl	0x8000852 <cortex_m_semihosting::export::hstdout_fmt>
+//   0x08000536 <+210>:	str	r0, [sp, #8]
+//   0x08000538 <+212>:	b.n	0x800053a <main+214>
+//   0x0800053a <+214>:	ldr	r0, [sp, #8]
+//   0x0800053c <+216>:	and.w	r0, r0, #1
+//   0x08000540 <+220>:	bl	0x80006c0 <<core::result::Result<T, E>>::unwrap>
+//   0x08000544 <+224>:	b.n	0x8000546 <main+226>
+//   0x08000546 <+226>:	bl	0x80006bc <cortex_m::asm::nop>
+//   0x0800054a <+230>:	b.n	0x800054c <main+232>
+//=> 0x0800054c <+232>:	bkpt	0x0000
+//   0x0800054e <+234>:	b.n	0x8000550 <main+236>
+//   0x08000550 <+236>:	ldr	r0, [sp, #44]	; 0x2c
+//   0x08000552 <+238>:	subs	r1, r0, #1
+//   0x08000554 <+240>:	cmp	r0, #1
+//   0x08000556 <+242>:	str	r1, [sp, #4]
+//   0x08000558 <+244>:	bvs.n	0x8000570 <main+268>
+//   0x0800055a <+246>:	b.n	0x800055c <main+248>
+//   0x0800055c <+248>:	ldr	r0, [sp, #4]
+//   0x0800055e <+250>:	str	r0, [sp, #44]	; 0x2c
+//   0x08000560 <+252>:	b.n	0x800046c <main+8>
+//   0x08000562 <+254>:	movw	r0, #14396	; 0x383c
+//   0x08000566 <+258>:	movt	r0, #2048	; 0x800
+//   0x0800056a <+262>:	bl	0x80029ca <panic>
+//   0x0800056e <+266>:	udf	#254	; 0xfe
+//   0x08000570 <+268>:	movw	r0, #14484	; 0x3894
+//   0x08000574 <+272>:	movt	r0, #2048	; 0x800
+//   0x08000578 <+276>:	bl	0x80029ca <panic>
+//   0x0800057c <+280>:	udf	#254	; 0xfe
+// End of assembler dump.
 //
 //    Commit your answers (bare1_4)
 //
