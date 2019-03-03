@@ -39,7 +39,7 @@ fn main() -> ! {
     hprintln!("").unwrap();
 
     let a: [u8; 4] = [65u8; 4];
-    //let mut a = [0u8; 4];
+    let mut a = [0u8; 4];
 
     hprintln!("").unwrap();
     hprintln!("a = {}", core::str::from_utf8(&a).unwrap()).unwrap();
@@ -98,7 +98,7 @@ fn main() -> ! {
 //`
 //    Run the program, what happens and why?
 //
-//    ** your answer here **
+//    a is full of 0. It is due to the "0u8", which is the number 0 as an unsigned 8-bit integer
 //
 //    Commit your answers (bare3_3)
 //
