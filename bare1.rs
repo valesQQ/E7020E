@@ -32,8 +32,8 @@ fn main() -> ! {
         iprintln!(stim, "{}", _x);
         hprintln!("{}", _x).unwrap();
 
-        cortex_m::asm::nop();
-        cortex_m::asm::bkpt();
+        //cortex_m::asm::nop();
+        //cortex_m::asm::bkpt();
         _x -= 1;
         
     }
