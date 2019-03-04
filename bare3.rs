@@ -30,11 +30,15 @@ fn main() -> ! {
     for _c in bs {
         hprint!("{},", _c).unwrap();
     }
- let mut _a: [u8; 4]=[65u8; 4];
+ //let mut _a: [u8; 4]=[65u8; 4];
+
+
+    let _a =&bs;
+
     unsafe{
         hprintln!("iterate iterate using (raw) indexing").unwrap();
     for _i in 0..s.len() {
-        _a[_i]=bs[_i];
+        //_a[_i]=bs[_i];
         hprintln!("{},", bs[_i]).unwrap();
     }}
 
@@ -44,7 +48,7 @@ fn main() -> ! {
     //let mut a = [0u8; 4];
 
     hprintln!("").unwrap();
-    hprintln!("a = {}", core::str::from_utf8(&_a).unwrap()).unwrap();
+    hprintln!("a = {}", core::str::from_utf8(_a).unwrap()).unwrap();
 
     loop {}
 }
