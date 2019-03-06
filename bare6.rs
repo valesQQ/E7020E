@@ -50,8 +50,8 @@ fn idle(stim: &mut Stim, rcc: RCC, gpioa: GPIOA) {
 
     // at 16 Mhz, 8_000_000 cycles = period 0.5s
     // at 64 Mhz, 4*8_000_000 cycles = period 0.5s
-    // let cycles = 8_000_000;
-    let cycles = 4 * 8_000_000;
+     let cycles = 8_000_000;
+    //let cycles = 4 * 8_000_000;
 
     loop {
         iprintln!(stim, "on {}", DWT::get_cycle_count());
@@ -128,7 +128,8 @@ fn clock_out(rcc: &RCC, gpioc: &GPIOC) {
 //
 //    What is the frequency of blinking?
 //
-//    ** your answer here **
+//    The led blinks for 0.5s and is off for 0.5s. It means
+//    that it has a period of 1s. Then the frequency is 1Hz.
 //
 //    commit your answers (bare6_1)
 //
