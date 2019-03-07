@@ -125,11 +125,11 @@ fn main() -> ! {
 //
 //    rcc.cfgr.sysclk(64.mhz()).pclk1(64.mhz()).pclk2(64.mhz()).freeze();
 //
-//    ** your answer here **
+//    pclk1 should be at 42MHz maximum. We need to set hclk=sysclk
 //
 //    rcc.cfgr.sysclk(84.mhz()).pclk1(42.mhz()).pclk2(64.mhz()).freeze();
 //
-//    ** your answer here **
+//    We need to set hclk=sysclk.
 //
 //    Commit your answers (bare7_1)
 //
